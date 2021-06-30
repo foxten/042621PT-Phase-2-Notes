@@ -1,0 +1,77 @@
+Let's define the following:
+
+0624 Study Group
+    -Components
+        -functional components
+        -can be class components
+        -reusable bits of code
+        -appends to the DOM
+        -building blocks 
+
+    -Props
+        -"properties"
+        -objects
+        -live in components
+        -passed into functions from our components
+            -think of them as parameters stored in components
+
+    -JSX
+        -unique to React
+        -allows us to write (what looks like) HTML in our JavaScript
+        -Babel
+
+
+    -Project Ideas
+        -Medium Type Blog
+            -Different types of blogs/categories/topics
+            -Different styles for bloggers to choose (font style updates)
+            -Different layout
+                - Title
+                - Content
+
+        -Something like Discord
+            -Comms app 
+            -Custom layout for each user
+                -List of communities
+                    -Text field (input)
+                    -Community specific
+                        -Calls (for individual groups)
+                -Settings
+                -Friends
+        
+        -Zara's Website
+            -Search Bar/field
+            -General layout
+                -Scrambled right now
+                -Streamline images
+                -Best sellers vs unordered listings
+                -Clothing information
+                    -Include sourcing data
+
+0629 Study Group    
+    -Event Handling
+        -accepts a callback function
+            - can be anonymous or named
+            - has to be in the components 
+                - can't write outside of the component? we're going to test this! (First thing on 0705!!!)
+        -onClick
+            - 'click'
+        -onChange
+            -using a form's input fields
+            -dropdowns 
+        -onSubmit
+            -usually attached to a button
+            -updates something based on form submission
+
+
+    -State
+        -helps us dynamically update the component based on some input/action from the user
+        -lives in our component
+        -is essentially the 'state of being' 
+        -Jonathan Villanueva says it's "Props++"
+        -can be updated
+            -must use setState function to update state in a component
+            -can it be mutated?
+
+
+
