@@ -74,4 +74,19 @@ Let's define the following:
             -can it be mutated?
 
 
+0708 Study Group
+    -Controlled Components
+        -Any component that accesses information through props
+        -What makes a form component a controlled form?
+            -They have props!
+                -Our input fields, buttons, checkboxes, etc. all have props passed down to them, and can access information this way
+                -Can also use these props (i.e. callback functions) to update parent components, and state
+
+
+    -Task(s)
+        -We're going to replicate a vanilla JS SPA as a React SPA
+        -What components will we need?
+            -What should our hierarchy be?
+
+
 
