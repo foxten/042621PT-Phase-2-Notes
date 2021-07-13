@@ -87,6 +87,12 @@ Let's define the following:
         -We're going to replicate a vanilla JS SPA as a React SPA
         -What components will we need?
             -What should our hierarchy be?
-            
+                -Added in separate file
 
+0713 Study Group
+    -Today's Tasks!
+        -Update our current components
+            -Artist names should display and be clickable
+            -Finish building our form
+            -
 

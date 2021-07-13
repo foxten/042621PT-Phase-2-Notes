@@ -1,11 +1,10 @@
-import ArtistName from './ArtistName'
+import ArtistList from './ArtistList'
 
-
-function ArtistPanel(){
+function ArtistPanel( {artistInfo, displayAlbums} ){
     return (
         <div>
             <h1>Artists</h1>
-            <ArtistName />
+            <ArtistList artistInfo={artistInfo} displayAlbums={displayAlbums} />
         </div>
     );
 }

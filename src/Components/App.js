@@ -1,17 +1,27 @@
+import React, {useState} from 'react'
 import '../App.css';
 import Button from './Button'
 import ArtistPanel from './ArtistPanel'
 import AlbumList from './AlbumList'
 import Form from './Form'
-  // how would we go about displaying our form only when the button is clicked? it's not automatically visible in the Content div
 import artistAlbums  from '../data/artistAlbums.js'
-// artistAlbums was not a named export, and did not need the curly brackets
+// 0708 The fix: artistAlbums was not a named export, and did not need the curly brackets
 
 function App() {
-  console.log(artistAlbums)
+  // console.log(artistAlbums)
+  
+  // Updating App to hold list of albums to display
+  // 1. Set album state in App so we have an empty array to store albums from artistAlbums
+  const [albums, setAlbums] = useState([])
   
   function handleClicking(check, update){
     update(check === '#87899E' ? '#6CA696' : '#87899E')
+  }
+
+  function handleAlbumNames(){
+    // will setAlbums in this function so new array of albums is passed to AlbumList
+    // should take some information from the ArtistName when we click on one of 
+    // those elements
   }
   
   return (
@@ -22,11 +32,12 @@ function App() {
         </header>
 
         <div className="Content">
-          <AlbumList />
+          {/* 2. Pass down albums as props to AlbumList component */}
+          <AlbumList albums={albums} />
         </div>
 
         <div className='Navigation-Links'>
-          <ArtistPanel />
+          <ArtistPanel artistInfo={artistAlbums} displayAlbums={handleAlbumNames} />
           <Button onButtonClick={handleClicking} /> 
           {/* check to see what happens when we move the button to the ArtistPanel instead */}
         </div>
@@ -35,8 +46,7 @@ function App() {
   );
 }
 
-// <input type='text'></input>
-// <input type='text' firstName={'Jack'} value={firstName}>
+
 
 export default App;
 

@@ -1,4 +1,4 @@
-function AlbumList(){
+function AlbumList({albums}){
 
     return(
         <>
