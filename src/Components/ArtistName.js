@@ -9,9 +9,11 @@
 
 
 
-function ArtistName({ name }){
+function ArtistName({ displayAlbums, name, artistAlbums }){
+
+
     return (
-       <p>{name}</p>
+       <p onClick={() => displayAlbums(artistAlbums)}>{name}</p>
     )
 }
 

@@ -5,11 +5,23 @@
 import React, { useState } from 'react'
 
 function Button({ onButtonClick }){
-    const [buttonColor, setButtonColor] = useState('#6CA696')
+    // const [buttonColor, setButtonColor] = useState('#6CA696')
+    // const [message, setMessage] = useState('Add New Artist')
+    const [message, setMessage] = useState(true)
+    // if message is true, text should be 'Add New Artist'
+    // if not, should be 'Hide Form'
 
-    return(    
-        <button onClick={() => onButtonClick(buttonColor, setButtonColor)} style={{backgroundColor: buttonColor}}>Change Button Color!</button>
+    const updateButton = () =>{
+        onButtonClick()
+        setMessage(!message)
+    }
+
+    return(   
+        <button onClick={() => updateButton()}>{message === true ? 'Add New Artist':'Hide Form'}</button>
+
     )
 }
 
 export default Button
+
+// style={{backgroundColor: buttonColor}}

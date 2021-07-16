@@ -21,3 +21,8 @@ code {
 html {
   font-family: Arial, Helvetica, sans-serif
 }
+
+img {
+  height: 300px;
+  width: 300px;
+}

@@ -94,5 +94,11 @@ Let's define the following:
         -Update our current components
             -Artist names should display and be clickable
             -Finish building our form
-            -
+            
+0715 Study Group
+    -Finish writing our callback function in App to display albums accordingly (x)
+    -Grab our data from an API instead of the data file (x)
+    -Make our content field dynamically display our form or discography based on a button click (x)
+    -Update our form so we can gather information and post it to our API
+        -we should also update the app's state to account for the addition
 

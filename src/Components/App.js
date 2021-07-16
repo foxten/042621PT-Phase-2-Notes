@@ -1,27 +1,31 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import '../App.css';
 import Button from './Button'
 import ArtistPanel from './ArtistPanel'
 import AlbumList from './AlbumList'
 import Form from './Form'
-import artistAlbums  from '../data/artistAlbums.js'
-// 0708 The fix: artistAlbums was not a named export, and did not need the curly brackets
+// import artistAlbums  from '../data/artistAlbums.js'
+
 
 function App() {
   // console.log(artistAlbums)
   
-  // Updating App to hold list of albums to display
-  // 1. Set album state in App so we have an empty array to store albums from artistAlbums
   const [albums, setAlbums] = useState([])
+  const [artistInfo, setArtistInfo] = useState([])
+  const [displayDisco, setDisplayDisco] = useState(true)
   
-  function handleClicking(check, update){
-    update(check === '#87899E' ? '#6CA696' : '#87899E')
+  function handleClicking(){
+    setDisplayDisco(!displayDisco)
   }
 
-  function handleAlbumNames(){
-    // will setAlbums in this function so new array of albums is passed to AlbumList
-    // should take some information from the ArtistName when we click on one of 
-    // those elements
+  useEffect(() => {
+    fetch('http://localhost:4000/artistAlbums')
+      .then(resp => resp.json())
+        .then(data => setArtistInfo(data))
+  }, [])
+
+  function handleAlbumNames(albumNames){
+    setAlbums(albumNames)
   }
   
   return (
@@ -31,15 +35,14 @@ function App() {
           <h1>React - Album List</h1>
         </header>
 
-        <div className="Content">
-          {/* 2. Pass down albums as props to AlbumList component */}
-          <AlbumList albums={albums} />
-        </div>
-
         <div className='Navigation-Links'>
-          <ArtistPanel artistInfo={artistAlbums} displayAlbums={handleAlbumNames} />
+          <ArtistPanel artistInfo={artistInfo} displayAlbums={handleAlbumNames} />
           <Button onButtonClick={handleClicking} /> 
           {/* check to see what happens when we move the button to the ArtistPanel instead */}
+        </div>
+
+        <div className="Content">
+          {displayDisco === true ? <AlbumList albums={albums}/> : <Form />}
         </div>
 
     </div>
