@@ -10,14 +10,15 @@ function Button({ onButtonClick }){
     const [message, setMessage] = useState(true)
     // if message is true, text should be 'Add New Artist'
     // if not, should be 'Hide Form'
-
+    let display = (message ? 'Add New Artist':'Hide Form')
+    
     const updateButton = () =>{
-        onButtonClick()
         setMessage(!message)
+        onButtonClick()
     }
 
     return(   
-        <button onClick={() => updateButton()}>{message === true ? 'Add New Artist':'Hide Form'}</button>
+        <button onClick={() => updateButton()}>{display}</button>
 
     )
 }

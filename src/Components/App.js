@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
+// import { Route , Switch} from "react-router-dom";
 import '../App.css';
 import Button from './Button'
 import ArtistPanel from './ArtistPanel'
 import AlbumList from './AlbumList'
 import Form from './Form'
-// import artistAlbums  from '../data/artistAlbums.js'
 
 
 function App() {
-  // console.log(artistAlbums)
   
   const [albums, setAlbums] = useState([])
   const [artistInfo, setArtistInfo] = useState([])
@@ -27,6 +26,10 @@ function App() {
   function handleAlbumNames(albumNames){
     setAlbums(albumNames)
   }
+
+  function updateAlbumList(newData){
+    setArtistInfo([...artistInfo, newData])
+  }
   
   return (
     <div className="App" >
@@ -38,11 +41,11 @@ function App() {
         <div className='Navigation-Links'>
           <ArtistPanel artistInfo={artistInfo} displayAlbums={handleAlbumNames} />
           <Button onButtonClick={handleClicking} /> 
-          {/* check to see what happens when we move the button to the ArtistPanel instead */}
         </div>
 
         <div className="Content">
-          {displayDisco === true ? <AlbumList albums={albums}/> : <Form />}
+          {displayDisco ? <AlbumList albums={albums}/> : 
+          <Form updateCurrentAlbums={updateAlbumList} />}
         </div>
 
     </div>

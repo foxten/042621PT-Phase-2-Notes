@@ -99,6 +99,15 @@ Let's define the following:
     -Finish writing our callback function in App to display albums accordingly (x)
     -Grab our data from an API instead of the data file (x)
     -Make our content field dynamically display our form or discography based on a button click (x)
+
+0720 Study Group    
     -Update our form so we can gather information and post it to our API
-        -we should also update the app's state to account for the addition
+        -we should also update the app's state to account for the addition (x)
+
+0722 Study Group
+    -Start updating our code to use React Router
+        -URL should display albumList component and name of artist when clicked
+            -ex: https://localhost:3000/albums/corinne-bailey-rae
+        -URL should display form component when button is clicked
+            -ex: https://localhost:3000/add-artist
 
