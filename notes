@@ -91,9 +91,9 @@ Let's define the following:
 
 0713 Study Group
     -Today's Tasks!
-        -Update our current components
-            -Artist names should display and be clickable
-            -Finish building our form
+        -Update our current components (x)
+            -Artist names should display and be clickable (x)
+            -Finish building our form (x)
             
 0715 Study Group
     -Finish writing our callback function in App to display albums accordingly (x)
@@ -101,13 +101,17 @@ Let's define the following:
     -Make our content field dynamically display our form or discography based on a button click (x)
 
 0720 Study Group    
-    -Update our form so we can gather information and post it to our API
+    -Update our form so we can gather information and post it to our API (x)
         -we should also update the app's state to account for the addition (x)
 
 0722 Study Group
-    -Start updating our code to use React Router
+    -Update our code to use React Router
+        -URL should display form component when button is clicked (x)
+            -ex: https://localhost:3000/add-artist
+    -Let's display all of the albums at once when we head to https://localhost:3000/albums (x)
+
+*BEFORE 0727 STUDY GROUP*
+    -Update our code to use React Router
         -URL should display albumList component and name of artist when clicked
             -ex: https://localhost:3000/albums/corinne-bailey-rae
-        -URL should display form component when button is clicked
-            -ex: https://localhost:3000/add-artist
-
+            -hint: you can do this in the ArtistName component using React Router DOM

@@ -73,6 +73,17 @@
         }
       ],
       "id": 4
+    },
+    {
+      "artist": "Topaz Jones",
+      "albums": [
+        {
+          "id": "ZlWLTA72Pvr_CgrvNeZEc",
+          "title": "DGTYM",
+          "img": "https://media.pitchfork.com/photos/60802cfb9080feb0f2eb300d/1:1/w_320/Topaz-Jones.jpeg"
+        }
+      ],
+      "id": 5
     }
   ]
 }

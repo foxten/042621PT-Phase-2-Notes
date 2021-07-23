@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-// import { Route , Switch} from "react-router-dom";
+import { Route , Switch} from "react-router-dom";
 import '../App.css';
 import Button from './Button'
 import ArtistPanel from './ArtistPanel'
 import AlbumList from './AlbumList'
 import Form from './Form'
 
-
+  
 function App() {
   
-  const [albums, setAlbums] = useState([])
   const [artistInfo, setArtistInfo] = useState([])
+  const [albums, setAlbums] = useState([])
   const [displayDisco, setDisplayDisco] = useState(true)
   
   function handleClicking(){
@@ -20,8 +20,13 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:4000/artistAlbums')
       .then(resp => resp.json())
-        .then(data => setArtistInfo(data))
+        .then(data => {
+          setArtistInfo(data)
+          setAlbums(data.map(info => info.albums).flat())
+        })
   }, [])
+
+  console.log(albums)
 
   function handleAlbumNames(albumNames){
     setAlbums(albumNames)
@@ -43,9 +48,20 @@ function App() {
           <Button onButtonClick={handleClicking} /> 
         </div>
 
+        {/* let's update our component to render albums or the form based on the URL */}
+
         <div className="Content">
-          {displayDisco ? <AlbumList albums={albums}/> : 
-          <Form updateCurrentAlbums={updateAlbumList} />}
+          {/* {displayDisco ? <AlbumList albums={albums}/> : <Form updateCurrentAlbums={updateAlbumList} />} */}
+          <Switch>
+            {/* <Route path={where to go}> */}
+            <Route path={'/add-artist'}>
+              {/* what to render */}
+              <Form updateCurrentAlbums={updateAlbumList} />
+            </Route>
+            <Route path={'/albums'}>
+              <AlbumList albums={albums}/>
+            </Route>
+          </Switch>
         </div>
 
     </div>

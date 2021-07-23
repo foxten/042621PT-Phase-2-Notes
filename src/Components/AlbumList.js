@@ -1,8 +1,10 @@
 import AlbumCard from './AlbumCard'
+import {nanoid} from 'nanoid'
+
 function AlbumList({albums}){
     
     const formattedAlbums = albums.map(album => {
-    return <AlbumCard key={album.id} img={album.img} title={album.title} />
+    return <AlbumCard key={nanoid()} img={album.img} title={album.title} />
 
     })
     
