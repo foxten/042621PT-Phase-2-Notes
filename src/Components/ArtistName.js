@@ -8,12 +8,18 @@
             // boolean to show a div or not
 
 
+import { Link } from "react-router-dom";
 
 function ArtistName({ displayAlbums, name, artistAlbums }){
 
+    const formattedName = name.toLowerCase().split(' ').join('-')
+
+
 
     return (
-       <p onClick={() => displayAlbums(artistAlbums)}>{name}</p>
+        <p>
+            <Link to={`/albums/${formattedName}`} onClick={() => displayAlbums(artistAlbums)}>{name}</Link>
+        </p>
     )
 }
 

@@ -1,5 +1,8 @@
 // endpoint - http://localhost:4000/artistAlbums
 // test image - https://upload.wikimedia.org/wikipedia/en/2/2b/Bruno_Mars_-_24K_Magic_%28Official_Album_Cover%29.png
+// update form (0721)
+    // add albums to an existing artist's discography
+    
 
 import React,  { useState } from 'react'
 import {nanoid} from 'nanoid'

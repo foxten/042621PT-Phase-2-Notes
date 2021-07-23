@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
-// import { Route , Switch} from "react-router-dom";
+import { Route , Switch} from "react-router-dom";
 import '../App.css';
 import Button from './Button'
 import ArtistPanel from './ArtistPanel'
 import AlbumList from './AlbumList'
 import Form from './Form'
 
-
+// update app (0721)
+  // work on setting up react router
+  
 function App() {
   
   const [albums, setAlbums] = useState([])
@@ -43,9 +45,16 @@ function App() {
           <Button onButtonClick={handleClicking} /> 
         </div>
 
+      {/* let's update our component to render albums or the form based on the URL */}
         <div className="Content">
-          {displayDisco ? <AlbumList albums={albums}/> : 
-          <Form updateCurrentAlbums={updateAlbumList} />}
+          <Switch>
+            <Route path="/albums">
+              <AlbumList albums={albums}/>
+            </Route> 
+            <Route exact path="/add-artist">
+              <Form updateCurrentAlbums={updateAlbumList} />
+            </Route>
+           </Switch>
         </div>
 
     </div>
